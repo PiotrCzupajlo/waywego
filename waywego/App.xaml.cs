@@ -1,4 +1,6 @@
-﻿namespace waywego
+﻿using waywego.Desktop;
+using waywego.Mobile;
+namespace waywego
 {
     public partial class App : Application
     {
@@ -6,7 +8,12 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+#if ANDROID
+            MainPage = new NavigationPage(new AndroidLandingPage());
+#else
+        MainPage = new NavigationPage(new DesktopLandingPage());
+#endif
+
         }
     }
 }
