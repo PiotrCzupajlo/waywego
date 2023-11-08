@@ -17,9 +17,6 @@ public partial class DesktopLandingPage : ContentPage
 	}
 
 
-
-
-
 	// method resize: Resize the window to fullscreen and locks it size
 	public async void resize() {
 		await Task.Delay(10);
@@ -36,14 +33,15 @@ public partial class DesktopLandingPage : ContentPage
 	// change the images on the page
 	public async void changeimages() {
 		await Task.Delay(20);
-		//pozyskiwanie patha
+		//getting the current directory
 		string path = AppDomain.CurrentDomain.BaseDirectory;
 		int index = path.IndexOf("\\bin\\");
 		string s = path.Substring(0, index);
 		string imagepath = s + "\\Images\\eiffel.png";
 
         rightimage.Source = ImageSource.FromFile(imagepath);
-
+		imagepath = s + "\\Images\\logo-black.png";
+		leftlogo.Source = ImageSource.FromFile(imagepath);
 
 
 	}

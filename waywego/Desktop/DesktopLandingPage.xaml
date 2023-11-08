@@ -6,13 +6,17 @@
              >
     <HorizontalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#F4FDFF" x:Name="leftside">
-            <Label 
-            Text="Welcome to .NET MAUI! Desktop"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+            <HorizontalStackLayout>
+                <Image x:Name="leftlogo" HorizontalOptions="Start" MinimumHeightRequest="100" MinimumWidthRequest="100" MaximumHeightRequest="200" MaximumWidthRequest="200"></Image>
+            </HorizontalStackLayout>
+            <Label FontSize="Header" Text="Hi There!" TextColor="#666666" HorizontalOptions="Center"></Label>
+            <Label Text="Welcome to way we go" FontSize="Large" TextColor="#666666" HorizontalOptions="Center"></Label>
+            <Entry x:Name="Eusername" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding username}"></Entry>
+            <Entry x:Name="Epassword" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding password}" ></Entry>
             <Button Text="Log In"
-                Command="{Binding NavigateToLoggedPageCommand}"
-                ></Button>
+                CommandParameter=""
+                Command="{Binding NavigateToLoggedPageCommand}"></Button>
         </VerticalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#8DCFDE" x:Name="rightside">
             <Image x:Name="rightimage" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" ></Image>
