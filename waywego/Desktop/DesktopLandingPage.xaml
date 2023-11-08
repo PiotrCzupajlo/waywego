@@ -2,14 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="waywego.Desktop.DesktopLandingPage"
-             Title="DesktopLandingPage">
-    <VerticalStackLayout>
-        <Label 
+             Title="DesktopLandingPage"
+             >
+    <HorizontalStackLayout>
+        <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#F4FDFF" x:Name="leftside">
+            <Label 
             Text="Welcome to .NET MAUI! Desktop"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button Text="Log In"
+            <Button Text="Log In"
                 Command="{Binding NavigateToLoggedPageCommand}"
                 ></Button>
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+        <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#8DCFDE" x:Name="rightside">
+            <Image x:Name="rightimage" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" ></Image>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
 </ContentPage>

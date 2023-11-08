@@ -68,4 +68,9 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Images\" />
+	  <Folder Include="NewFolder\NewFolder\" />
+	</ItemGroup>
+
 </Project>
