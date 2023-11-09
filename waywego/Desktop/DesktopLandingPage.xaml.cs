@@ -1,12 +1,14 @@
 using System;
 using System.IO;
 using waywego.Viewmodel;
+using waywego.Model;
 
 namespace waywego.Desktop;
 
 public partial class DesktopLandingPage : ContentPage
 {
-	public DesktopLandingPage()
+    public User User { get; set; }
+    public DesktopLandingPage()
 	{
 		InitializeComponent();
 		this.BindingContext = new StartPageViewModel(this.Navigation);
@@ -45,4 +47,6 @@ public partial class DesktopLandingPage : ContentPage
 
 
 	}
+
+
 }

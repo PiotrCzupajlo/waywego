@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"      
              x:Class="waywego.Desktop.DesktopLandingPage"
              Title="DesktopLandingPage"
-             >
+             xmlns:model="clr-namespace:waywego.Model"
+             xmlns:Viewmodel="clr-namespace:waywego.Viewmodel"
+             x:DataType="Viewmodel:StartPageViewModel">
     <HorizontalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#F4FDFF" x:Name="leftside">
 
@@ -12,8 +14,8 @@
             </HorizontalStackLayout>
             <Label FontSize="Header" Text="Hi There!" TextColor="#666666" HorizontalOptions="Center"></Label>
             <Label Text="Welcome to way we go" FontSize="Large" TextColor="#666666" HorizontalOptions="Center"></Label>
-            <Entry x:Name="Eusername" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding username}"></Entry>
-            <Entry x:Name="Epassword" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding password}" ></Entry>
+            <Entry x:Name="Eusername" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Username}" ></Entry>
+            <Entry x:Name="Epassword" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Password}"  ></Entry>
             <Button Text="Log In"
                 CommandParameter=""
                 Command="{Binding NavigateToLoggedPageCommand}"></Button>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -10,9 +12,15 @@ using waywego.Mobile;
 
 namespace waywego.Viewmodel
 {
-    public partial class StartPageViewModel : ObservableObject
+    public partial class StartPageViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         public INavigation _navigation;
+
+        public string Username { get; set; }
+
+        public string Password {get;set;}
+        public StartPageViewModel() { }
         public StartPageViewModel(INavigation navigation) { 
         _navigation = navigation;
         }
@@ -22,13 +30,7 @@ namespace waywego.Viewmodel
             return 0;
         
         }
-        [ObservableProperty]
-        string username;
-
-        [ObservableProperty]
-        string password;
-
-
+        //changing page after clicking login button and login sys ofc
         [RelayCommand]
         private async void NavigateToLoggedPage() {
 
