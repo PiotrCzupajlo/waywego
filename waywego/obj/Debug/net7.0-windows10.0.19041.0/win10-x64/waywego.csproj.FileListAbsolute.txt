@@ -323,3 +323,5 @@ C:\Users\stasi\Desktop\waywego\waywego\obj\Debug\net7.0-windows10.0.19041.0\win1
 C:\Users\stasi\Desktop\waywego\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\stasi\Desktop\waywego\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\stasi\Desktop\waywego\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\stasi\Desktop\waywego\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\System.Data.SqlClient.dll
+C:\Users\stasi\Desktop\waywego\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\sni.dll
