@@ -2,10 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"      
              x:Class="waywego.Desktop.DesktopLandingPage"
-             Title="DesktopLandingPage"
+             Title=""
              xmlns:model="clr-namespace:waywego.Model"
              xmlns:Viewmodel="clr-namespace:waywego.Viewmodel"
-             x:DataType="Viewmodel:StartPageViewModel">
+             x:DataType="Viewmodel:StartPageViewModel"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <Viewmodel:StartPageViewModel></Viewmodel:StartPageViewModel>
+    </ContentPage.BindingContext>
     <HorizontalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#F4FDFF" x:Name="leftside">
 
@@ -16,9 +20,12 @@
             <Label Text="Welcome to way we go" FontSize="Large" TextColor="#666666" HorizontalOptions="Center"></Label>
             <Entry x:Name="Eusername" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Username}" ></Entry>
             <Entry x:Name="Epassword" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Password}"  ></Entry>
+            <Label x:Name="alertmessage" Text="{Binding Alertmessage}" TextColor="Red" Margin=" 50,0,0,0"></Label>
+
             <Button Text="Log In"
                 CommandParameter=""
                 Command="{Binding NavigateToLoggedPageCommand}"></Button>
+
         </VerticalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#8DCFDE" x:Name="rightside">
             <Image x:Name="rightimage" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0" ></Image>

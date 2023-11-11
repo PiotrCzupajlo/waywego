@@ -1,1 +1,1 @@
-C:\Users\stasi\Desktop\waywego\waywego\waywego.csproj;x64
+C:\Users\stasi\Desktop\new1\waywego\waywego.csproj;x64

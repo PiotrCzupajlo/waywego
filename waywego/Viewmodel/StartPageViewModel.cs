@@ -16,19 +16,32 @@ namespace waywego.Viewmodel
 {
     public partial class StartPageViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public Databasehandler Databasehandler;
+        public event PropertyChangedEventHandler PropertyChanged;
         public INavigation _navigation;
 
         public string Username { get; set; }
 
-        public string Password {get;set;}
+        public string Password { get; set; }
+
+        public string alertmessage;
+
+        public string Alertmessage
+        {
+            get => alertmessage;
+            set { 
+            alertmessage= value;
+                OnPropetyChanged(nameof(Alertmessage));
+                
+            }
+        
+        }
         public StartPageViewModel() { }
         public StartPageViewModel(INavigation navigation) { 
         _navigation = navigation;
             Databasehandler = new Databasehandler();
         }
-
+       
         public async Task<int> LogIn() {
             var data = Databasehandler.loguser(Username, Password);
             DataTable dt = await data;
@@ -42,13 +55,19 @@ namespace waywego.Viewmodel
 
 
 #if WINDOWS
-            await LogIn();
-            await _navigation.PushAsync(new DesktopLoggedPage());
+            if (await LogIn() == 1)
+                await _navigation.PushAsync(new DesktopLoggedPage());
+            else
+            {
+                Alertmessage = "incorrect login or password";
+            }
 #else
             await _navigation.PushAsync(new AndroidLoggedPage());
 #endif
 
         }
+        void OnPropetyChanged([CallerMemberName] string propertyname = "") =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
 
 
     }

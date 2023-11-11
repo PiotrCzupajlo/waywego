@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IMdLupap5d35sCEAXCesQa4qHomUbeZBfgEm9ALb5vVYlIzgvJepAHXgX75JsjU+2FBtovu28ISS+xtf69Bk2g==",
+  "dgSpecHash": "6pTaKe1NOa5wFfkIZ7M0ofob+JizAGFBL3bo8RR9cce0ePvkZfSCshbnP9lOaZoLDINN33pRGWcVODzC1lPiQg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\stasi\\Desktop\\waywego\\waywego\\waywego.csproj",
+  "projectFilePath": "C:\\Users\\stasi\\Desktop\\new1\\waywego\\waywego.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stasi\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\stasi\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",

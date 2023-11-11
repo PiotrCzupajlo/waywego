@@ -71,6 +71,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Images\" />
+	  <Folder Include="Viewmodel\Commands\" />
 	</ItemGroup>
 
 </Project>
