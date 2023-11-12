@@ -18,13 +18,16 @@
             </HorizontalStackLayout>
             <Label FontSize="Header" Text="Hi There!" TextColor="#666666" HorizontalOptions="Center"></Label>
             <Label Text="Welcome to way we go" FontSize="Large" TextColor="#666666" HorizontalOptions="Center"></Label>
-            <Entry x:Name="Eusername" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Username}" ></Entry>
-            <Entry x:Name="Epassword" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Password}"  ></Entry>
+            <Entry x:Name="Eusername" BackgroundColor="#8DCFDE" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Username" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Username}" ></Entry>
+            <Entry x:Name="Epassword" BackgroundColor="#8DCFDE" IsPassword="True" HorizontalOptions="Center" TextColor="#363C2A" Placeholder="Password" PlaceholderColor="#363C2A" Margin="0,50,0,0" Text="{Binding Password}"  ></Entry>
             <Label x:Name="alertmessage" Text="{Binding Alertmessage}" TextColor="Red" Margin=" 50,0,0,0"></Label>
-
-            <Button Text="Log In"
+            <Button  Text="Join Us now!" x:Name="btnregister" Command="{Binding NavigateToRegPageCommand}" TextColor="#6C63FF" HorizontalOptions="Center"></Button>
+            <Button x:Name="btnlogin" Text="Log In" MinimumHeightRequest="70" TextColor="#F4FDFF"
                 CommandParameter=""
-                Command="{Binding NavigateToLoggedPageCommand}"></Button>
+                Command="{Binding NavigateToLoggedPageCommand}"
+                    BackgroundColor="#6C63FF"
+                    HorizontalOptions="Center"
+                    ></Button>
 
         </VerticalStackLayout>
         <VerticalStackLayout MinimumWidthRequest="200" BackgroundColor="#8DCFDE" x:Name="rightside">

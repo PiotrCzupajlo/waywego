@@ -38,6 +38,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = waywego.Desktop.DesktopLog
 build_metadata.AdditionalFiles.TargetPath = Desktop\DesktopLoggedPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Desktop\DesktopLoggedPage.xaml
 
+[C:/Users/stasi/Desktop/new1/waywego/Desktop/DesktopRegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = waywego.Desktop.DesktopRegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Desktop\DesktopRegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Desktop\DesktopRegisterPage.xaml
+
 [C:/Users/stasi/Desktop/new1/waywego/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = waywego.MainPage.xaml

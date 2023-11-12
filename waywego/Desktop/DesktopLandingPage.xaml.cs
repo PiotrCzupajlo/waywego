@@ -30,6 +30,9 @@ public partial class DesktopLandingPage : ContentPage
 		Window.MinimumHeight = DeviceDisplay.Current.MainDisplayInfo.Height;
 		rightimage.MaximumWidthRequest = right;
 		rightimage.MaximumHeightRequest = DeviceDisplay.Current.MainDisplayInfo.Height*0.8;
+		btnlogin.MinimumWidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width/4;
+		Eusername.MinimumWidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width / 5;
+		Epassword.MinimumWidthRequest = DeviceDisplay.Current.MainDisplayInfo.Width / 5;
 		
     }
 	// change the images on the page

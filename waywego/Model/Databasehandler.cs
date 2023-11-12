@@ -29,6 +29,25 @@ namespace waywego.Model
             return dt;
         
         }
+        public async Task<User> reguser(string username,string password) {
+            string base64username = Convert.ToBase64String(Encoding.UTF8.GetBytes(username));
+            string base64password = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
+
+            string sql = "insert into Users values ('" + base64username + "','" + base64password +"')";
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                await conn.OpenAsync();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            
+            }
+            User user = new User();
+            user.Username = base64password;
+            user.Password = base64username;
+            return user;
+        
+        }
 
 
     }

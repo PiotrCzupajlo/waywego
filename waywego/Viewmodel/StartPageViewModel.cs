@@ -56,8 +56,13 @@ namespace waywego.Viewmodel
 
 #if WINDOWS
             if (await LogIn() == 1)
-                await _navigation.PushAsync(new DesktopLoggedPage());
-            else
+            {
+                User user1 = new User();
+                user1.Username = Convert.ToBase64String(Encoding.UTF8.GetBytes(Username));
+                user1.Password = Convert.ToBase64String(Encoding.UTF8.GetBytes(Password));
+                await _navigation.PushAsync(new DesktopLoggedPage(user1));
+            }
+                else
             {
                 Alertmessage = "incorrect login or password";
             }
@@ -66,6 +71,36 @@ namespace waywego.Viewmodel
 #endif
 
         }
+
+
+
+
+        [RelayCommand]
+        private async void NavigateToRegPage() {
+#if WINDOWS
+await _navigation.PushAsync(new DesktopRegisterPage());
+#endif
+        }
+
+        [RelayCommand]
+        private async void NavigateToLogPage()
+        {
+#if WINDOWS
+    await _navigation.PopAsync();
+#endif
+        }
+
+        [RelayCommand]
+        private async void Registertologgedpage()
+        {
+#if WINDOWS
+ User user1 = await Databasehandler.reguser(Username,Password);
+ await _navigation.PushAsync(new DesktopLoggedPage(user1));
+#endif
+
+        }
+
+
         void OnPropetyChanged([CallerMemberName] string propertyname = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
 
