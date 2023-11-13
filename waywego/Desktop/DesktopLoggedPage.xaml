@@ -2,11 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="waywego.Desktop.DesktopLoggedPage"
-             Title="DesktopLoggedPage">
+             Title=""
+             xmlns:model="clr-namespace:waywego.Model"
+             xmlns:Viewmodel="clr-namespace:waywego.Viewmodel"
+             x:DataType="Viewmodel:LoggedPageViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F4FDFF">
+    <ContentPage.BindingContext>
+        <Viewmodel:LoggedPageViewModel></Viewmodel:LoggedPageViewModel>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
-        <Label 
-            Text="Logged"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Button Text="Trending Places" x:Name="btntrending" TextColor="{Binding Btn1state}" Command="{Binding Btn1clickedCommand}"></Button>
+            <Button Text="Lastest" x:Name="btnlastest" TextColor="{Binding Btn2state}" Command="{Binding Btn2clickedCommand}"></Button>
+            <Button Text="Map of places" x:Name="btnmap" TextColor="{Binding Btn3state}" Command="{Binding Btn3clickedCommand}" ></Button>
+            
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

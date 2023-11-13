@@ -95,13 +95,13 @@ await _navigation.PushAsync(new DesktopRegisterPage());
         {
 #if WINDOWS
  User user1 = await Databasehandler.reguser(Username,Password);
- await _navigation.PushAsync(new DesktopLoggedPage(user1));
+ await _navigation.PopAsync();
 #endif
 
         }
 
 
-        void OnPropetyChanged([CallerMemberName] string propertyname = "") =>
+        public void OnPropetyChanged([CallerMemberName] string propertyname = "") =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
 
 
