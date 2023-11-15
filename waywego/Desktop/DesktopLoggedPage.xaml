@@ -7,7 +7,8 @@
              xmlns:Viewmodel="clr-namespace:waywego.Viewmodel"
              x:DataType="Viewmodel:LoggedPageViewModel"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F4FDFF">
+             BackgroundColor="#F4FDFF"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps">
     <ContentPage.BindingContext>
         <Viewmodel:LoggedPageViewModel></Viewmodel:LoggedPageViewModel>
     </ContentPage.BindingContext>
@@ -18,5 +19,8 @@
             <Button Text="Map of places" x:Name="btnmap" TextColor="{Binding Btn3state}" Command="{Binding Btn3clickedCommand}" ></Button>
             
         </HorizontalStackLayout>
+        <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500">
+            
+        </maps:Map>
     </VerticalStackLayout>
 </ContentPage>

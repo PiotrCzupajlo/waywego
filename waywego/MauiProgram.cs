@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui.Maps;
+using Microsoft.Extensions.Logging;
+using System;
+using System.IO;
+using DotNetEnv;
 
 
 namespace waywego
@@ -7,9 +11,16 @@ namespace waywego
     {
         public static MauiApp CreateMauiApp()
         {
+            string path = System.AppDomain.CurrentDomain.BaseDirectory;
+            int index = path.IndexOf("\\waywego");
+            path = path.Substring(0, index+9);
+
+            DotNetEnv.Env.Load(path+".env");
+            string smt = Environment.GetEnvironmentVariable("bingmapsapi");
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkitMaps(Environment.GetEnvironmentVariable("bingmapsapi"))
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

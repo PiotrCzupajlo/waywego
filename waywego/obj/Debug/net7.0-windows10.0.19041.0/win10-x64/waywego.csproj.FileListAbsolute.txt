@@ -652,3 +652,9 @@ C:\Users\stasi\Desktop\new1\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x
 C:\Users\stasi\Desktop\new1\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\stasi\Desktop\new1\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\stasi\Desktop\new1\waywego\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Maps.dll
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\DotNetEnv.dll
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Maps.dll
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Maps.dll
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Sprache.dll
+C:\Users\stasi\Desktop\new1\waywego\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\clrcompression.dll
