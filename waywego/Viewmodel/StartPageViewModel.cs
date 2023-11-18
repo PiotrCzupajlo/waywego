@@ -95,7 +95,14 @@ await _navigation.PushAsync(new DesktopRegisterPage());
         {
 #if WINDOWS
  User user1 = await Databasehandler.reguser(Username,Password);
- await _navigation.PopAsync();
+            if (user1.Alertmessage != null)
+            {
+                Alertmessage = user1.alertmessage;
+            }
+            else
+            {
+                await _navigation.PopAsync();
+            }
 #endif
 
         }

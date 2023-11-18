@@ -32,17 +32,27 @@ namespace waywego.Model
         public async Task<User> reguser(string username,string password) {
             string base64username = Convert.ToBase64String(Encoding.UTF8.GetBytes(username));
             string base64password = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
-
-            string sql = "insert into Users values ('" + base64username + "','" + base64password +"')";
+            User user = new User();
+            string sql = "select * from Users where username = \'" + base64username + "\'";
             using (SqlConnection conn = new SqlConnection(cs))
             {
                 await conn.OpenAsync();
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-            
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
+                sda.Fill(dt);
+                sql= "insert into Users values ('" + base64username + "','" + base64password + "')";
+                if (dt.Rows.Count != 1)
+                {
+                    await conn.OpenAsync();
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                }
+                else {
+                    user.Alertmessage = "Użytkownik z takim loginem już istnieje";
+                }
             }
-            User user = new User();
+
             user.Username = base64password;
             user.Password = base64username;
             return user;

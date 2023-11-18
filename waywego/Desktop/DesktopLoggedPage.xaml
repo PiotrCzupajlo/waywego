@@ -22,5 +22,6 @@
         <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500">
             
         </maps:Map>
+        
     </VerticalStackLayout>
 </ContentPage>
