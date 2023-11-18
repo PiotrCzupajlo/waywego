@@ -23,4 +23,9 @@ public partial class DesktopLoggedPage : ContentPage
 
 
     }
+
+    private void basicmap_MapClicked(object sender, Microsoft.Maui.Controls.Maps.MapClickedEventArgs e)
+    {
+
+    }
 }

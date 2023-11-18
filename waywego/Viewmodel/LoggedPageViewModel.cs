@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using waywego.Desktop;
 
 using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.Input;
@@ -29,6 +30,58 @@ namespace waywego.Viewmodel
         }
         public LoggedPageViewModel() { }
 
+        //region tasks makes buttons change the verticalstacklayout user see
+        #region tasks
+        public bool task1=true;
+        public bool task2=false;
+        public bool task3=false;
+
+        public bool Task1
+        { 
+        get=>task1;
+            set { 
+            task1=true;
+                task2 = false;
+                task3=false;
+                OnPropetyChanged(nameof(Task1));
+                OnPropetyChanged(nameof(Task2));
+                OnPropetyChanged(nameof(Task3));
+
+            }  
+        
+        }
+
+        public bool Task2
+        { 
+        get=>task2;
+            set
+            {
+                task2=true;
+                task3 = false;
+                task1 = false;
+                OnPropetyChanged(nameof(Task1));
+                OnPropetyChanged(nameof(Task2));
+                OnPropetyChanged(nameof(Task3));
+            }
+        
+        }
+        public bool Task3
+        { 
+        get => task3;
+            set
+            {
+                task3=true;
+                task1 = false;
+                task2 = false;
+                OnPropetyChanged(nameof(Task1));
+                OnPropetyChanged(nameof(Task2));
+                OnPropetyChanged(nameof(Task3));
+            }
+        }
+
+
+
+
 
         public int tabopen;
         public int Tabopen {
@@ -39,6 +92,8 @@ namespace waywego.Viewmodel
             
             }
         }
+        #endregion
+        //region buttonstates change the colors of buttons
         #region buttonstates
         public int OverAllState { get; set; }
         public Microsoft.Maui.Graphics.Color btn1state = Microsoft.Maui.Graphics.Color.FromArgb("#6C63FF");
@@ -91,16 +146,20 @@ namespace waywego.Viewmodel
         [RelayCommand]
         private async void Btn1clicked() {
             Btn1state = purple;
+            Task1 = true;
+            
         }
         [RelayCommand]
         private async void Btn2clicked()
         {
             Btn2state = purple;
+            Task2 = true;
         }
         [RelayCommand]
         private async void Btn3clicked()
         {
             Btn3state = purple;
+            Task3= true;
         }
 
 

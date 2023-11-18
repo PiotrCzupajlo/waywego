@@ -15,13 +15,23 @@
     <VerticalStackLayout>
         <HorizontalStackLayout>
             <Button Text="Trending Places" x:Name="btntrending" TextColor="{Binding Btn1state}" Command="{Binding Btn1clickedCommand}"></Button>
-            <Button Text="Lastest" x:Name="btnlastest" TextColor="{Binding Btn2state}" Command="{Binding Btn2clickedCommand}"></Button>
+            <Button Text="Your Map" x:Name="btnlastest" TextColor="{Binding Btn2state}" Command="{Binding Btn2clickedCommand}"></Button>
             <Button Text="Map of places" x:Name="btnmap" TextColor="{Binding Btn3state}" Command="{Binding Btn3clickedCommand}" ></Button>
             
         </HorizontalStackLayout>
-        <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500">
-            
-        </maps:Map>
+        <VerticalStackLayout x:Name="Trending" IsVisible="{Binding Task1}">
+            <Label Text="text3" TextColor="Red"></Label>
+        </VerticalStackLayout>
+        <VerticalStackLayout x:Name="YourMap" IsVisible="{Binding Task2}">
+            <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500" MapClicked="basicmap_MapClicked">
+
+            </maps:Map>
+        </VerticalStackLayout>
+        <VerticalStackLayout x:Name="MapofPlaces" IsVisible="{Binding Task3}">
+            <Label Text="text2" TextColor="Teal"></Label>
+        </VerticalStackLayout>
+
+     
         
     </VerticalStackLayout>
 </ContentPage>
