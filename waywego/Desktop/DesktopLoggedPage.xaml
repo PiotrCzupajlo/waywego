@@ -20,7 +20,16 @@
             
         </HorizontalStackLayout>
         <VerticalStackLayout x:Name="Trending" IsVisible="{Binding Task1}">
-            <Label Text="text3" TextColor="Red"></Label>
+            <HorizontalStackLayout>
+                <VerticalStackLayout x:Name="Baner1" BackgroundColor="LightGray" MinimumHeightRequest="300" MinimumWidthRequest="100">
+                    <Label Text="Most Popular Places" TextColor="Red"></Label>
+                    
+                    
+                </VerticalStackLayout>
+                <VerticalStackLayout x:Name="place1" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
+                <VerticalStackLayout x:Name="place2" BackgroundColor="LightGray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
+                <VerticalStackLayout x:Name="place3" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
+            </HorizontalStackLayout>
         </VerticalStackLayout>
         <VerticalStackLayout x:Name="YourMap" IsVisible="{Binding Task2}">
             <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500" MapClicked="basicmap_MapClicked">
