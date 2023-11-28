@@ -8,10 +8,10 @@ namespace waywegoapi.Controllers
     public class PinsDataRequestsController:ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Pin> GetPins()
+        public ActionResult<IEnumerable<Pin>> GetPins()
         {
             Pin pin = new Pin();
-            return new List<Pin> { pin };
+            return Ok(new List<Pin> { pin });
         }
     }
 }

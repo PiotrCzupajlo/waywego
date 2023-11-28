@@ -8,10 +8,10 @@ namespace waywegoapi.Controllers
     public class PlacesDataRequestController:ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Place> GetPlaces()
+        public ActionResult<IEnumerable<Place>> GetPlaces()
         {
             Place place = new Place();
-            return new List<Place> { place };
+            return Ok(new List<Place> { place });
 
         }
     }
