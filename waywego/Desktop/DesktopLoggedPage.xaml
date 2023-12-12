@@ -19,12 +19,34 @@
             <Button Text="Map of places" x:Name="btnmap" TextColor="{Binding Btn3state}" Command="{Binding Btn3clickedCommand}" ></Button>
             
         </HorizontalStackLayout>
-        <VerticalStackLayout x:Name="Trending" IsVisible="{Binding Task1}">
-            <HorizontalStackLayout>
-                <VerticalStackLayout x:Name="Baner1" BackgroundColor="LightGray" MinimumHeightRequest="300" MinimumWidthRequest="100">
-                    <Label Text="Most Popular Places" TextColor="Red"></Label>
-                    
-                    
+        <VerticalStackLayout x:Name="Trending" IsVisible="{Binding Task1}" Padding="200">
+            <HorizontalStackLayout >
+                <VerticalStackLayout x:Name="Baner1" BackgroundColor="#f2f2f2" MinimumHeightRequest="300" MinimumWidthRequest="100">
+                    <Path  Fill="#05000000" >
+                        
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathGeometry.Figures>
+                                    <PathFigureCollection>
+                                        <PathFigure IsClosed="True" StartPoint="0,0">
+                                            <PathFigure.Segments>
+                                                <PathSegmentCollection>
+                                                    <LineSegment x:Name="pdown" Point="0,100"></LineSegment>
+                                                    <LineSegment x:Name="pright" Point="100,0"></LineSegment>
+                                                    
+                                                </PathSegmentCollection>
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathFigureCollection>
+                                </PathGeometry.Figures>
+                            </PathGeometry>
+                        </Path.Data>
+
+                    </Path>
+                    <Label Text="Most Popular" TextColor="#99000000" FontSize="Title"></Label>
+
+
+
                 </VerticalStackLayout>
                 <VerticalStackLayout x:Name="place1" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
                 <VerticalStackLayout x:Name="place2" BackgroundColor="LightGray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>

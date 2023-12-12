@@ -40,7 +40,11 @@ namespace waywego.Model
                 DataTable dt = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
                 sda.Fill(dt);
-                sql= "insert into Users values ('" + base64username + "','" + base64password + "')";
+            }
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                DataTable dt = new DataTable();
+                sql = "insert into Users values ('" + base64username + "','" + base64password + "')";
                 if (dt.Rows.Count != 1)
                 {
                     await conn.OpenAsync();
