@@ -12,6 +12,7 @@ namespace waywego
             MainPage = new NavigationPage(new AndroidLandingPage());
 #else
         MainPage = new NavigationPage(new DesktopLandingPage());
+            
 #endif
 
         }

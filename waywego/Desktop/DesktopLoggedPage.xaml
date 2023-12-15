@@ -5,6 +5,7 @@
              Title=""
              xmlns:model="clr-namespace:waywego.Model"
              xmlns:Viewmodel="clr-namespace:waywego.Viewmodel"
+             
              x:DataType="Viewmodel:LoggedPageViewModel"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#F4FDFF"
@@ -43,18 +44,21 @@
                         </Path.Data>
 
                     </Path>
-                    <Label Text="Most Popular" TextColor="#99000000" FontSize="Title"></Label>
+                    <Label Text="Most Popular Collections" TextColor="#99000000" FontSize="Title"></Label>
 
 
 
                 </VerticalStackLayout>
-                <VerticalStackLayout x:Name="place1" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
+                <VerticalStackLayout x:Name="place1" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100" Margin="100,15,100,15">
+                    
+                    
+                </VerticalStackLayout>
                 <VerticalStackLayout x:Name="place2" BackgroundColor="LightGray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
-                <VerticalStackLayout x:Name="place3" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"></VerticalStackLayout>
+                <VerticalStackLayout x:Name="place3" BackgroundColor="Gray" MinimumHeightRequest="300" MinimumWidthRequest="100"  Margin="100,15,100,15"></VerticalStackLayout>
             </HorizontalStackLayout>
         </VerticalStackLayout>
         <VerticalStackLayout x:Name="YourMap" IsVisible="{Binding Task2}">
-            <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500" MapClicked="basicmap_MapClicked">
+            <maps:Map x:Name="basicmap" WidthRequest="500" HeightRequest="500" MapClicked="basicmap_MapClicked" >
 
             </maps:Map>
         </VerticalStackLayout>

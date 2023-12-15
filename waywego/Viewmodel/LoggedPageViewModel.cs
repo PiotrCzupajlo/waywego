@@ -28,7 +28,7 @@ namespace waywego.Viewmodel
             _navigation = navigation;
             
         }
-        public LoggedPageViewModel() { }
+        public LoggedPageViewModel() {}
 
         //region tasks makes buttons change the verticalstacklayout user see
         #region tasks
