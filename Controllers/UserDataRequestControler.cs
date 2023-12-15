@@ -36,8 +36,34 @@ namespace waywegoapi.Controllers
                 }
             
             }
-            return Ok(false);
+            return NotFound();
         
+
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<bool>> CreateUser(string username, string password)
+        {
+            await Task.Delay(100);
+            DataTable dataTable = new DataTable();
+            string base64username = Convert.ToBase64String(Encoding.UTF8.GetBytes(username));
+            string base64password = Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
+            string sql = "insert into Users values ('"+base64username+"','"+base64password+"')";
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                await conn.OpenAsync();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                var result = cmd.ExecuteNonQuery();
+                if (result == 1)
+                {
+                    return Ok();
+                }
+                else
+                    return BadRequest(result);
+                    
+
+            }
+            
 
         }
 
